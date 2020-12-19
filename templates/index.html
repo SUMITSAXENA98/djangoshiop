@@ -3,7 +3,23 @@
         <!----------------BODY---------------->
         {% block content %}
         <div class="container-fluid mt-3">
-            <div class="row mx-auto">
+          <div class="row">
+
+            <!--filter-->
+            <div class="col-lg-3 mx-auto" >
+              <div class="list-group">
+                <a  class="list-group-item list-group-item-action active ">categoryies</a>
+                {% for category in category %}
+                <a href="#" class="list-group-item list-group-item-action ">{{category.name}}</a>
+                {% endfor %}
+                
+              </div>
+
+            </div>
+
+            <!--all products-->
+            <div id="products" class="col-lg-9 mx-auto">
+              <div class="row mx-auto">
                 {% for product in product %}
             <div class="card mx-auto mb-4" style="width: 18rem;">
                 <img src="{{product.image.url}}" class="card-img-top" alt="...">
@@ -18,5 +34,8 @@
             {% endfor %}
             </div>
             </div>
+          </div>
+            
+        </div>
 
         {% endblock %}
