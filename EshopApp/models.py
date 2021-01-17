@@ -19,3 +19,16 @@ class Product(models.Model):
     image=models.ImageField(upload_to='uploads/products/')
 
 
+class customer(models.Model):
+    firstName=models.CharField(max_length=30)
+    lastName=models.CharField(max_length=30)
+    contactNo=models.CharField(max_length=15)
+    email=models.EmailField(unique=True)
+    password=models.CharField(max_length=500)
+
+    
+    
+   
+
+   
+    
